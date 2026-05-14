@@ -4,7 +4,7 @@
 
 ## 在线试玩 / 部署
 
-本项目是纯静态页面，站点文件集中在 `chess/` 目录，推送到 GitHub 后可直接通过 GitHub Pages 发布：
+本项目是纯静态页面，站点文件集中在 `browser-chess/` 目录，推送到 GitHub 后可直接通过 GitHub Pages 发布：
 
 1. 打开仓库的 **Settings → Pages**。
 2. 在 **Build and deployment** 中选择 **GitHub Actions**。
@@ -15,12 +15,12 @@
 
 > 如果仓库名或 Pages 配置不同，请把上方地址中的 `refactored-umbrella` 替换为实际仓库名。
 
-也可以部署到任意静态托管平台，例如 Netlify、Vercel、Cloudflare Pages 或 Nginx，只需要托管 `chess/` 目录。
+也可以部署到任意静态托管平台，例如 Netlify、Vercel、Cloudflare Pages 或 Nginx，只需要托管 `browser-chess/` 目录。
 
 ## 本地试玩
 
 ```bash
-cd chess
+cd browser-chess
 npm start
 ```
 
@@ -33,7 +33,7 @@ http://127.0.0.1:4173/
 ## 检查
 
 ```bash
-cd chess
+cd browser-chess
 npm run check
 npm test
 ```
