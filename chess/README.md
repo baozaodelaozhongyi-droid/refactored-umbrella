@@ -4,18 +4,19 @@
 
 ## 在线试玩 / 部署
 
-本项目是纯静态页面，推送到 GitHub 后可直接通过 GitHub Pages 发布：
+本项目是纯静态页面，站点文件集中在 `chess/` 目录，推送到 GitHub 后可直接通过 GitHub Pages 发布：
 
 1. 打开仓库的 **Settings → Pages**。
 2. 在 **Build and deployment** 中选择 **GitHub Actions**。
 3. 推送 `main` 分支后，工作流会发布站点。
 4. 发布完成后，即可通过 GitHub Pages 地址在浏览器和手机上试玩。
 
-也可以部署到任意静态托管平台，例如 Netlify、Vercel、Cloudflare Pages 或 Nginx，只需要托管仓库根目录。
+也可以部署到任意静态托管平台，例如 Netlify、Vercel、Cloudflare Pages 或 Nginx，只需要托管 `chess/` 目录。
 
 ## 本地试玩
 
 ```bash
+cd chess
 npm start
 ```
 
@@ -28,6 +29,7 @@ http://127.0.0.1:4173/
 ## 检查
 
 ```bash
+cd chess
 npm run check
 npm test
 ```
