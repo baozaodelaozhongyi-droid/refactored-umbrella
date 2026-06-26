@@ -29,6 +29,13 @@ const promotionButtons = document.querySelectorAll("#promotion [data-piece]");
 const fileLabels = document.querySelectorAll(".files span");
 const rankLabels = document.querySelectorAll(".ranks span");
 
+function loadMobileStylesheet() {
+  const mobileStylesheet = document.createElement("link");
+  mobileStylesheet.rel = "stylesheet";
+  mobileStylesheet.href = "mobile.css";
+  document.head.append(mobileStylesheet);
+}
+
 let board;
 let turn;
 let selected = null;
@@ -621,5 +628,6 @@ flipButton.addEventListener("click", () => {
   renderBoard();
 });
 
+loadMobileStylesheet();
 updateSoundButton();
 resetGame();

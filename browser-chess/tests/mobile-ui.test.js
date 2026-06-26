@@ -2,11 +2,13 @@ const assert = require("node:assert/strict");
 const { readFileSync } = require("node:fs");
 const test = require("node:test");
 
-const html = readFileSync("index.html", "utf8");
+const script = readFileSync("script.js", "utf8");
 const mobileCss = readFileSync("mobile.css", "utf8");
 
-test("mobile override stylesheet is loaded after base styles", () => {
-  assert.match(html, /<link rel="stylesheet" href="styles\.css" \/>\s*<link rel="stylesheet" href="mobile\.css" \/>/);
+test("mobile override stylesheet is loaded without editing base markup", () => {
+  assert.match(script, /function loadMobileStylesheet\(\)/);
+  assert.match(script, /mobileStylesheet\.href = "mobile\.css"/);
+  assert.match(script, /document\.head\.append\(mobileStylesheet\)/);
 });
 
 test("mobile overrides make the board nearly full viewport width", () => {
