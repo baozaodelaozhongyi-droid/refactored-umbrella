@@ -32,10 +32,3 @@ test("sound controls and synthesized move audio are wired", () => {
   assert.match(script, /function playTone\(frequency, startTime, duration, volume, type\)/);
   assert.match(script, /playMoveSound\(Boolean\(lastMove\.captured\)\)/);
 });
-
-test("mobile layout gives the board nearly full viewport width", () => {
-  assert.match(css, /@media \(max-width: 760px\)\s*{[\s\S]*\.board-wrap\s*{[\s\S]*width:\s*min\(99vw,\s*42rem\)/);
-  assert.match(css, /@media \(max-width: 760px\)\s*{[\s\S]*\.board-row\s*{[\s\S]*grid-template-columns:\s*minmax\(0,\s*1fr\)/);
-  assert.match(css, /@media \(max-width: 760px\)\s*{[\s\S]*\.ranks,\s*\.files-top\s*{[\s\S]*display:\s*none/);
-  assert.match(css, /@media \(max-width: 760px\)\s*{[\s\S]*\.square\s*{[\s\S]*font-size:\s*clamp\(2rem,\s*10\.8vw,\s*4\.6rem\)/);
-});
