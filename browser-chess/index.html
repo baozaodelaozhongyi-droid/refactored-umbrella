@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>极简国际象棋</title>
+    <meta
+      name="description"
+      content="可在浏览器中在线试玩的极简国际象棋，支持桌面端和手机端。"
+    />
+    <meta name="theme-color" content="#f7f4ee" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app" aria-label="极简国际象棋游戏">
+      <section class="panel" aria-live="polite">
+        <p class="eyebrow">Minimal Chess</p>
+        <h1>国际象棋</h1>
+        <p id="status" class="status">白方先行</p>
+        <div class="actions">
+          <button id="reset" type="button">重新开始</button>
+          <button id="undo" type="button" disabled>悔棋</button>
+          <button id="flip" type="button" aria-pressed="false">翻转棋盘</button>
+          <button id="sound" type="button" aria-pressed="true">音效开</button>
+        </div>
+        <div class="captures" aria-label="吃子统计">
+          <p><span>白方已吃</span><strong id="captured-white">—</strong></p>
+          <p><span>黑方已吃</span><strong id="captured-black">—</strong></p>
+        </div>
+        <div class="move-history" aria-label="棋谱">
+          <p class="history-title">棋谱</p>
+          <ol id="move-list"></ol>
+        </div>
+        <p class="hint">点击棋子，再点击目标格。兵升变可选择升变棋子。</p>
+      </section>
+
+      <section class="board-wrap" aria-label="棋盘区域">
+        <div id="promotion" class="promotion hidden" role="dialog" aria-modal="true" aria-label="选择兵升变棋子">
+          <p>选择升变</p>
+          <div class="promotion-options">
+            <button type="button" data-piece="queen">后</button>
+            <button type="button" data-piece="rook">车</button>
+            <button type="button" data-piece="bishop">象</button>
+            <button type="button" data-piece="knight">马</button>
+          </div>
+        </div>
+        <div class="files files-top" aria-hidden="true">
+          <span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span>
+        </div>
+        <div class="board-row">
+          <div class="ranks ranks-left" aria-hidden="true">
+            <span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span>
+          </div>
+          <div id="board" class="board" role="grid" aria-label="国际象棋棋盘"></div>
+          <div class="ranks ranks-right" aria-hidden="true">
+            <span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span>
+          </div>
+        </div>
+        <div class="files files-bottom" aria-hidden="true">
+          <span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
